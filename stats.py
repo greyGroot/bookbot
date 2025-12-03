@@ -17,7 +17,15 @@ def get_chars_dict(text):
         for char in lower_chars:
             if (char in dict_characters):
                 dict_characters[char] += 1
-            else:
+            elif char.isalpha():
                 dict_characters[char] = 1
 
     return dict_characters
+
+def dict_to_list_chars(dict_characters):
+    list_chars = []
+
+    for key in dict_characters:
+        list_chars.append({'char': key, 'num': dict_characters[key]})
+
+    return list_chars;
